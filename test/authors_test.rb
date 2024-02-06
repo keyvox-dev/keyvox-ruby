@@ -3,7 +3,7 @@ require "pp"
 require "keyvox"
 require 'dotenv/load'
 
-class TagsTest < Test::Unit::TestCase
+class AuthorsTest < Test::Unit::TestCase
 
     @@kv = nil
 
@@ -18,16 +18,14 @@ class TagsTest < Test::Unit::TestCase
 
     def test_list
         omit()
-        tags = @@kv.tags.list()
-        pp(tags)
+        authors = @@kv.authors.list()
+        pp(authors)
         #assert_true(tags.has_key?("data"))
     end
 
     def test_retrieve
-        omit()
-        id = ENV["TAG_ID"]
-        tag = @@kv.tags.retrieve(id)
-
-        assert_true(tag.has_key?("data"))
+        id = ENV["AUTHOR_ID"]
+        author = @@kv.authors.retrieve(id)
+        pp(author)
     end
 end

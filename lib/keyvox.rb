@@ -1,5 +1,6 @@
 require_relative "article"
 require_relative "tag"
+require_relative "author"
 
 class KeyVox
     # param [String] api_key
@@ -14,6 +15,7 @@ class KeyVox
 
         @articles = Article.new(@api_key, @base_url)
         @tags = Tag.new(@api_key, @base_url)
+        @authors = Author.new(@api_key, @base_url)
     end
 
     def articles
@@ -22,5 +24,9 @@ class KeyVox
 
     def tags
         @tags
+    end
+
+    def authors
+        @authors
     end
 end
