@@ -1,4 +1,5 @@
 require_relative "article"
+require_relative "tag"
 
 class KeyVox
     # param [String] api_key
@@ -12,9 +13,14 @@ class KeyVox
         @base_url = params[:base_url] || "https://kevvox.dev/api"
 
         @articles = Article.new(@api_key, @base_url)
+        @tags = Tag.new(@api_key, @base_url)
     end
 
     def articles
         @articles
+    end
+
+    def tags
+        @tags
     end
 end

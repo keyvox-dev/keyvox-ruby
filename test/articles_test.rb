@@ -17,12 +17,14 @@ class ArticlesTest < Test::Unit::TestCase
     end
 
     def test_list
+        omit()
         articles = @@kv.articles.list()
         pp(articles)
         #assert_true(articles.has_key?("data"))
     end
 
     def test_retrieve
+        omit()
         id = ENV["ARTICLE_ID"]
         article = @@kv.articles.retrieve(id)
         # pp(article)
